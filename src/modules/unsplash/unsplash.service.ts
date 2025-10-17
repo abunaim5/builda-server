@@ -6,6 +6,10 @@ const unsplash = createApi({
 });
 
 export const getRandomImages = async () => {
-    const result = await unsplash.photos.getRandom({ count: 20 });
+    const result = await unsplash.photos.getRandom({
+        count: 20,
+        collectionIds: ['317099']
+    });
+    console.log(result.response)
     return result.response;
 };
